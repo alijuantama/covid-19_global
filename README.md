@@ -1,4 +1,5 @@
-<!-- RUNNING PROJECTS: -->
+RUNNING PROJECTS:
+
 
 1. Install and run the apk
 2. open the apps and user will be directly routed to main page
@@ -16,7 +17,9 @@ Detail Page (Country Detail):
 10. Click back to go to the main page again
 
 
-<!-- BUILDING PROJECTS: -->
+BUILDING PROJECTS:
+
+
 1. install required package (refer to pubspec.yaml line 49 - 58)
 2. create first design of Application UI to better understand what we are going to do
 3. Create Bloc folder to process the apps logic
