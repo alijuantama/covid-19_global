@@ -47,7 +47,6 @@ class _CountryDetailState extends State<CountryDetail> {
           builder: (context, snapshot) {
             if (snapshot.hasData) {
               var accessedData = snapshot.data;
-
               for (var i = 0; i < accessedData.length; i++) {
                 _deathByCovid19.add(_DeathCovid19(
                     i == 0 ? "Yesterday" : "${i + 1} days ago",

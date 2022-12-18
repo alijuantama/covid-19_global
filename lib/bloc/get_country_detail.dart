@@ -6,9 +6,6 @@ import 'package:shared_preferences/shared_preferences.dart';
 class GetCountryDetail {
   List _countryDetail = [];
 
-  String tes = "Malaysia";
-  String get initialTes => tes;
-
   StreamController _inputControllerDetail = StreamController();
   StreamSink get inputCountryDetail => _inputControllerDetail.sink;
 
@@ -24,7 +21,6 @@ class GetCountryDetail {
     _inputControllerDetail.stream.listen((event) async {
       if (event == "detail") {
         SharedPreferences prefs = await SharedPreferences.getInstance();
-        //Return String
         String? _selectedCountry = prefs.getString('_selectedCountry');
         HttpLink httpLink = HttpLink("https://covid19-graphql.netlify.app/");
         GraphQLClient qlClient = GraphQLClient(
@@ -79,7 +75,7 @@ class GetCountryDetail {
           QueryOptions(
             document: gql(
               """query country {
-    country(name: "${this.tes}", filterBy: twoDaysAgo) {
+    country(name: "${_selectedCountry}", filterBy: twoDaysAgo) {
         country
         countryInfo {
             _id
